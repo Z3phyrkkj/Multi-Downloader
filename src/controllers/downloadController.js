@@ -1,0 +1,40 @@
+/**
+ * Controlador responsável por gerenciar downloads de mídias das redes sociais
+ */
+const downloaderService = require('../services/downloaderService');
+const scraperService = require('../services/scraperService');
+const { createResponse, createErrorResponse, formatResponse } = require('../utils/responseFormatter');
+const errorHandler = require('../utils/errorHandler');
+
+const { validateUrl } = require('../validators/urlValidator');
+
+/**
+ * Controlador responsável por gerenciar downloads de mídia
+ */
+
+exports.handleDownload = async (req, res, platform) => {
+  try {
+    const url = req.query?.url || req.body?.url;
+
+    if (!url || !validateUrl[platform]?.(url)) {
+      return res.status(400).json(createErrorResponse('Invalid or missing url', 400));
+    }
+
+    const [downloadDataResult, metaDataResult] = await Promise.allSettled([
+      downloaderService.downloadFromPlatform(url, platform),
+      scraperService.extractMeta(url, platform)
+    ]);
+
+    const downloadData = downloadDataResult.status === 'fulfilled' ? downloadDataResult.value : {};
+    const metaData = metaDataResult.status === 'fulfilled' ? metaDataResult.value : {};
+
+    if (downloadData.success && downloadData.data) {
+      return res.json(createResponse({ platform, data: downloadData.data, criador: downloadData.criador || 'z3phyr' }));
+    }
+
+    const result = formatResponse(downloadData, metaData, platform);
+    return res.json(result);
+  } catch (error) {
+    errorHandler.handleError(res, error, platform);
+  }
+};

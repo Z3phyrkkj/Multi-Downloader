@@ -4,6 +4,23 @@ const durationParser = require('../services/durationParser');
  * Utilitário para formatar respostas da API de maneira consistente
  */
 
+const createResponse = (data, success = true) => ({
+  creator: 'Mkg',
+  success,
+  timestamp: new Date().toISOString(),
+  ...data
+});
+
+const createErrorResponse = (message, code = 400, details = null) => ({
+  creator: 'Mkg',
+  success: false,
+  error: { message, code, details },
+  timestamp: new Date().toISOString()
+});
+
+exports.createResponse = createResponse;
+exports.createErrorResponse = createErrorResponse;
+
 exports.formatResponse = (downloadData, metaData, platform) => {
   if (downloadData.success && downloadData.data) {
     return {
