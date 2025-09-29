@@ -175,5 +175,4 @@ Entre no nosso grupo de suporte no WhatsApp para dúvidas, sugestões e ajuda:
   <img src="https://img.icons8.com/fluency/96/000000/download.png" alt="Download"/>
   <img src="https://img.icons8.com/color/96/000000/rocket--v1.png" alt="Rocket"/>
   <img src="https://img.icons8.com/color/96/000000/star--v1.png" alt="Star"/>
-  <img src="https://img.icons8.com/color/96/000000/party-balloons.png" alt="Balloons"/>
 </p>
