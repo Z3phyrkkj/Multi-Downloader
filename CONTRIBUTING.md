@@ -8,8 +8,8 @@ Obrigado por considerar contribuir com o **Social Media Downloader**! Este proje
    - Clique em "Fork" no topo da página do GitHub.
 2. **Clone seu fork**
    ```bash
-   git clone https://github.com/seu-usuario/social-media-downloader.git
-   cd social-media-downloader
+   git clone https://github.com/Z3phyrkkj/Multi-Downloader.git
+   cd Multi-Downloader
    ```
 3. **Crie uma branch para sua contribuição**
    ```bash
