@@ -146,8 +146,8 @@ Pull requests são bem-vindos! Veja o arquivo `CONTRIBUTING.md` para detalhes.
 
 ## 📬 Contato
 
-- [GitHub Issues](https://github.com/seu-usuario/social-media-downloader/issues)
-- Email: seu-email@dominio.com
+- [GitHub Issues](https://github.com/Z3phyrkkj/Multi-Downloader/issues)
+- Email: Z3phyrPy@proton.me
 
 ---
 
