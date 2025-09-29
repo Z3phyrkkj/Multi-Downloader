@@ -1,6 +1,6 @@
-# 📥 Social Media Downloader
+# 📥 Multi-Downloader
 
-API e interface web para baixar vídeos do **Instagram**, **TikTok** e **Twitter** de forma rápida, segura e gratuita.
+API e interface web para baixar vídeos do **Instagram**, **TikTok** e **Twitter** de forma rápida, segura e gratuita, incluindo um módulo de jogo Gartic.
 
 <p align="center">
   <img src="https://img.icons8.com/color/96/000000/instagram-new.png" alt="Instagram"/>
@@ -8,144 +8,101 @@ API e interface web para baixar vídeos do **Instagram**, **TikTok** e **Twitter
   <img src="https://img.icons8.com/color/96/000000/twitter--v1.png" alt="Twitter"/>
 </p>
 
----
-
 ## 🚀 Funcionalidades
 
 - Download de mídias de Instagram, TikTok e Twitter
-- Suporte a múltiplos formatos e qualidades
+- API Gartic integrada com sistema de imagens e respostas
 - Interface web moderna e responsiva
 - API RESTful pronta para integração
 - Limite de requisições e proteção contra abusos
-- Logs, tratamento de erros e validação de URLs
-
----
+- Sistema de logs e tratamento de erros
+- Validação de URLs e formatos
 
 ## 🗂 Estrutura do Projeto
 
 ```
-api/
-├── config/           # Configurações da API
-│   └── apiConfig.js
-├── controllers/      # Lógica dos endpoints
-│   ├── downloadController.js
-│   └── metaController.js
-├── data/
-│   └── tempDownloads/ # Arquivos temporários
-├── middlewares/      # Middlewares globais
-│   ├── errorMiddleware.js
-│   └── logger.js
-├── public/           # Interface web
-│   ├── index.html
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── main.js
-├── routes/           # Rotas da API
-│   ├── index.js
-│   ├── instagram.js
-│   ├── tiktok.js
-│   └── twitter.js
-├── services/         # Serviços de download e scraping
-│   ├── downloaderService.js
-│   ├── durationParser.js
-│   └── scraperService.js
-├── utils/            # Utilitários
-│   ├── errorHandler.js
-│   └── responseFormatter.js
-├── validators/       # Validação de URLs
-│   └── urlValidator.js
-├── server.js         # Servidor principal
-├── test.js           # Testes de integração
-├── package.json      # Dependências e scripts
-└── .env              # Variáveis de ambiente
+Multi-Downloader/
+├── docs/             # Documentação detalhada
+├── scripts/          # Scripts úteis
+│   ├── setup.sh      # Configuração inicial
+│   └── cleanup.sh    # Limpeza de arquivos temporários
+├── src/              # Código fonte
+│   ├── config/       # Configurações
+│   ├── controllers/  # Controllers da API
+│   ├── data/         # Dados e arquivos temporários
+│   ├── features/     # Módulos específicos
+│   │   └── gartic/   # Feature Gartic
+│   ├── middlewares/  # Middlewares Express
+│   ├── public/       # Interface web
+│   ├── routes/       # Rotas da API
+│   ├── services/     # Serviços e lógica de negócio
+│   ├── utils/        # Utilitários
+│   ├── validators/   # Validação de dados
+│   ├── app.js        # Configuração Express
+│   └── server.js     # Entrada da aplicação
+├── tests/            # Testes automatizados
+│   ├── integration/  # Testes de integração
+│   └── unit/        # Testes unitários
+├── .env.example      # Template de variáveis de ambiente
+├── jest.config.js    # Configuração de testes
+└── package.json      # Dependências e scripts
 ```
 
----
+## ⚙️ Instalação
 
-## 🌐 Interface Web
-
-<p align="center">
-  <img src="https://img.icons8.com/fluency/96/000000/web.png" alt="Web"/>
-</p>
-
-- **URL Input:** Cole o link do vídeo desejado
-- **Botão Baixar:** Inicia o download
-- **Opções de Qualidade:** Escolha o formato e qualidade
-- **Preview:** Visualize a mídia antes de baixar
-
----
-
-## ⚙️ Instalação e Uso
-
+1. Clone o repositório:
 ```bash
-# Instale as dependências
-npm install
+git clone https://github.com/Z3phyrkkj/Multi-Downloader.git
+cd Multi-Downloader
+```
 
-# Inicie o servidor em modo desenvolvimento
+2. Execute o script de setup:
+```bash
+./scripts/setup.sh
+```
+
+3. Inicie o servidor:
+```bash
+# Desenvolvimento
 npm run dev
 
-# Ou em modo produção
+# Produção
 npm start
-
-# Acesse a interface web:
-http://localhost:3000
 ```
 
----
+## � Documentação
 
-## 🛠 Tecnologias
+Consulte a pasta `docs/` para documentação detalhada sobre:
+- Endpoints da API
+- Configuração do ambiente
+- Guia de contribuição
+- Especificações técnicas
 
-<p align="center">
-  <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js"/>
-  <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript"/>
-  <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML5"/>
-  <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3"/>
-</p>
+## 🛠 Scripts Disponíveis
 
-- Node.js + Express
-- Axios, Cheerio, dotenv, cors, helmet, compression
-- rate-limiter-flexible (proteção)
-- aetherz-downloader (download de mídias)
-- Jest, Supertest (testes)
-- HTML5, CSS3, JavaScript (frontend)
-
----
-
-## 📑 Endpoints Principais
-
-- `GET /api/ig` - Download do Instagram
-- `GET /api/tiktok` - Download do TikTok
-- `GET /api/twitter` - Download do Twitter
-
-Veja os arquivos em `routes/` para detalhes.
-
----
+- `npm start` - Inicia em produção
+- `npm run dev` - Inicia em desenvolvimento
+- `npm test` - Executa testes
+- `./scripts/cleanup.sh` - Limpa arquivos temporários
 
 ## 🧪 Testes
 
-Execute os testes com:
-
 ```bash
+# Executa todos os testes
 npm test
-```
 
----
+# Testes unitários
+npm run test:unit
+
+# Testes de integração
+npm run test:integration
+```
 
 ## 📝 Licença
 
-MIT © Mkg
+MIT © Z3phyrkkj
 
----
-
-## 💡 Contribua
-
-Pull requests são bem-vindos! Veja o arquivo `CONTRIBUTING.md` para detalhes.
-
----
-
-
-## 🆘 Suporte
+## 💬 Suporte
 
 <p align="center">
   <a href="https://chat.whatsapp.com/JDciDHplLDhKkgyTCoYhs0" target="_blank">
@@ -153,26 +110,16 @@ Pull requests são bem-vindos! Veja o arquivo `CONTRIBUTING.md` para detalhes.
   </a>
 </p>
 
-Entre no nosso grupo de suporte no WhatsApp para dúvidas, sugestões e ajuda:
+Entre no nosso grupo do WhatsApp:
+👉 [Entrar no grupo de suporte](https://chat.whatsapp.com/JDciDHplLDhKkgyTCoYhs0)
 
-👉 <a href="https://chat.whatsapp.com/JDciDHplLDhKkgyTCoYhs0" target="_blank"><strong>Entrar no grupo de suporte</strong></a>
+## � Contato
 
----
-
-## 📬 Contato
-
-<p align="center">
-  <img src="https://img.icons8.com/fluency/96/000000/gmail-new.png" alt="Email"/>
-  <img src="https://img.icons8.com/fluency/96/000000/github.png" alt="GitHub"/>
-</p>
-
-- [GitHub Issues](https://github.com/Z3phyrkkj/Multi-Downloader/issues)
+- GitHub: [@Z3phyrkkj](https://github.com/Z3phyrkkj)
 - Email: Z3phyrPy@proton.me
 
 ---
 
 <p align="center">
-  <img src="https://img.icons8.com/fluency/96/000000/download.png" alt="Download"/>
-  <img src="https://img.icons8.com/color/96/000000/rocket--v1.png" alt="Rocket"/>
-  <img src="https://img.icons8.com/color/96/000000/star--v1.png" alt="Star"/>
+  Feito com ❤️ por Z3phyrkkj
 </p>
