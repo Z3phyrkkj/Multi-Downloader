@@ -3,6 +3,7 @@
  */
 const downloaderService = require('../services/downloaderService');
 const scraperService = require('../services/scraperService');
+const analytics = require('../services/analyticsService');
 const { createResponse, createErrorResponse, formatResponse } = require('../utils/responseFormatter');
 const errorHandler = require('../utils/errorHandler');
 
@@ -29,12 +30,15 @@ exports.handleDownload = async (req, res, platform) => {
     const metaData = metaDataResult.status === 'fulfilled' ? metaDataResult.value : {};
 
     if (downloadData.success && downloadData.data) {
+      analytics.trackDownload(platform, url, true, { metadata: metaData });
       return res.json(createResponse({ platform, data: downloadData.data, criador: downloadData.criador || 'z3phyr' }));
     }
 
+    analytics.trackDownload(platform, url, false, { error: downloadData.error });
     const result = formatResponse(downloadData, metaData, platform);
     return res.json(result);
   } catch (error) {
+    analytics.trackError(error, { platform, url });
     errorHandler.handleError(res, error, platform);
   }
 };

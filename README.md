@@ -1,3 +1,4 @@
+
 # 📥 Multi-Downloader
 
 API e interface web para baixar vídeos do **Instagram**, **TikTok** e **Twitter** de forma rápida, segura e gratuita, incluindo um módulo de jogo Gartic.
@@ -8,84 +9,120 @@ API e interface web para baixar vídeos do **Instagram**, **TikTok** e **Twitter
   <img src="https://img.icons8.com/color/96/000000/twitter--v1.png" alt="Twitter"/>
 </p>
 
+
 ## 🚀 Funcionalidades
 
-- Download de mídias de Instagram, TikTok e Twitter
-- API Gartic integrada com sistema de imagens e respostas
-- Interface web moderna e responsiva
+- Download de mídias de Instagram, TikTok e Twitter (suporte a vídeo, imagem e áudio)
 - API RESTful pronta para integração
-- Limite de requisições e proteção contra abusos
-- Sistema de logs e tratamento de erros
-- Validação de URLs e formatos
+- Interface web moderna e responsiva (frontend em HTML/CSS/JS)
+- Validação automática de URLs por plataforma
+- Limite de requisições e proteção contra abusos (rate limit)
+- Sistema de logs avançado (Winston + Morgan)
+- Analytics via Discord Webhook
+- Tratamento global de erros
+- Módulo de jogo Gartic: API com imagens, respostas, validação e estatísticas
+- Testes automatizados (unitários e integração via Jest/Supertest)
+
 
 ## 🗂 Estrutura do Projeto
 
 ```
 Multi-Downloader/
-├── docs/             # Documentação detalhada
-├── scripts/          # Scripts úteis
-│   ├── setup.sh      # Configuração inicial
-│   └── cleanup.sh    # Limpeza de arquivos temporários
-├── src/              # Código fonte
-│   ├── config/       # Configurações
-│   ├── controllers/  # Controllers da API
-│   ├── data/         # Dados e arquivos temporários
-│   ├── features/     # Módulos específicos
-│   │   └── gartic/   # Feature Gartic
-│   ├── middlewares/  # Middlewares Express
-│   ├── public/       # Interface web
-│   ├── routes/       # Rotas da API
-│   ├── services/     # Serviços e lógica de negócio
-│   ├── utils/        # Utilitários
-│   ├── validators/   # Validação de dados
-│   ├── app.js        # Configuração Express
-│   └── server.js     # Entrada da aplicação
-├── tests/            # Testes automatizados
-│   ├── integration/  # Testes de integração
-│   └── unit/        # Testes unitários
-├── .env.example      # Template de variáveis de ambiente
-├── jest.config.js    # Configuração de testes
-└── package.json      # Dependências e scripts
+├── docs/                # Documentação detalhada
+├── scripts/             # Scripts úteis (setup, cleanup)
+├── src/                 # Código fonte principal
+│   ├── config/          # Configurações (API, logger)
+│   ├── controllers/     # Controllers da API principal
+│   ├── data/            # Dados e arquivos temporários
+│   ├── features/        # Módulos específicos (ex: Gartic)
+│   │   └── gartic/      # API de jogo Gartic (controllers, services, rotas, dados)
+│   ├── middlewares/     # Middlewares Express (logger, error)
+│   ├── models/          # Modelos de dados (se aplicável)
+│   ├── public/          # Interface web (HTML, CSS, JS)
+│   ├── routes/          # Rotas da API (Instagram, TikTok, Twitter, Gartic, Health)
+│   ├── services/        # Serviços de download, scraping, parsing
+│   ├── utils/           # Utilitários (formatadores, handlers)
+│   ├── validators/      # Validação de URLs
+│   ├── app.js           # Configuração principal Express
+│   └── server.js        # Entrada da aplicação
+├── tests/               # Testes automatizados (unitários e integração)
+├── .env.example         # Template de variáveis de ambiente
+├── jest.config.js       # Configuração de testes
+└── package.json         # Dependências e scripts
 ```
+
 
 ## ⚙️ Instalação
 
 1. Clone o repositório:
-```bash
-git clone https://github.com/Z3phyrkkj/Multi-Downloader.git
-cd Multi-Downloader
-```
+  ```bash
+  git clone https://github.com/Z3phyrkkj/Multi-Downloader.git
+  cd Multi-Downloader
+  ```
+2. Configure o webhook do Discord em `.env`:
+  ```bash
+  DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/your/webhook/url
+  ```
 
-2. Execute o script de setup:
-```bash
-./scripts/setup.sh
-```
+3. Execute o script de setup:
+  ```bash
+  ./scripts/setup.sh
+  ```
+4. Inicie o servidor:
+  ```bash
+  # Desenvolvimento
+  npm run dev
 
-3. Inicie o servidor:
-```bash
-# Desenvolvimento
-npm run dev
+  # Produção
+  npm start
+  ```
 
-# Produção
-npm start
-```
 
-## � Documentação
+## 📚 Documentação
 
-Consulte a pasta `docs/` para documentação detalhada sobre:
-- Endpoints da API
+Consulte a pasta `docs/` para detalhes sobre:
+- Endpoints da API (Instagram, TikTok, Twitter, Gartic)
+- Parâmetros e exemplos de uso
 - Configuração do ambiente
 - Guia de contribuição
 - Especificações técnicas
 
+### Principais Endpoints
+
+**Instagram**
+- `GET /api/ig?url=...` — Download de mídia
+
+**TikTok**
+- `GET /api/tiktok?url=...` — Download de vídeo
+
+**Twitter**
+- `GET /api/twitter?url=...` — Download de mídia
+
+**Gartic**
+- `GET /api/gartic` — Imagem aleatória
+- `POST /api/gartic` — Verificar resposta
+- `GET /api/gartic/health` — Status do serviço
+
+**Health**
+- `GET /api/health` — Status do servidor
+
+
 ## 🛠 Scripts Disponíveis
 
-- `npm start` - Inicia em produção
-- `npm run dev` - Inicia em desenvolvimento
-- `npm test` - Executa testes
-- `./scripts/cleanup.sh` - Limpa arquivos temporários
+- `npm start` — Inicia em produção
+- `npm run dev` — Inicia em desenvolvimento
+- `npm test` — Executa todos os testes
+- `npm run test:unit` — Testes unitários
+- `npm run test:integration` — Testes de integração
+- `npm run lint` — Lint do código
+- `npm run lint:fix` — Corrige problemas de lint
+- `npm run format` — Formata arquivos
+- `./scripts/cleanup.sh` — Limpa arquivos temporários
+
 
 ## 🧪 Testes
+
+Testes automatizados com Jest e Supertest:
 
 ```bash
 # Executa todos os testes
@@ -98,9 +135,11 @@ npm run test:unit
 npm run test:integration
 ```
 
+
 ## 📝 Licença
 
 MIT © Z3phyrkkj
+
 
 ## 💬 Suporte
 
@@ -113,10 +152,12 @@ MIT © Z3phyrkkj
 Entre no nosso grupo do WhatsApp:
 👉 [Entrar no grupo de suporte](https://chat.whatsapp.com/JDciDHplLDhKkgyTCoYhs0)
 
-## � Contato
+
+## 📬 Contato
 
 - GitHub: [@Z3phyrkkj](https://github.com/Z3phyrkkj)
 - Email: Z3phyrPy@proton.me
+
 
 ---
 

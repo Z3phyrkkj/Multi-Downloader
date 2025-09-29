@@ -4,6 +4,20 @@
 
 ---
 
+## [1.0.2] - 2025-09-29
+
+### ✨ Adicionado
+- Sistema de Analytics via Discord Webhook
+- Rastreamento automático de downloads
+- Monitoramento de erros em tempo real
+- Métricas de uso da API
+
+### 📝 Alterado
+- Atualização da documentação com instruções do webhook
+- Novo exemplo de configuração no arquivo .env
+
+---
+
 ## 📅 2025-09-29
 
 ### 🚀 Atualização Geral
