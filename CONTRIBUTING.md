@@ -51,7 +51,7 @@ Obrigado por considerar contribuir com o **Social Media Downloader**! Este proje
 
 - Seja respeitoso e colaborativo.
 - Use o inglês ou português para comentários e discussões.
-- Relate bugs e sugestões via [GitHub Issues](https://github.com/seu-usuario/social-media-downloader/issues).
+- Relate bugs e sugestões via [GitHub Issues](https://github.com/Z3phyrkkj/Multi-Downloader/issues).
 
 ## Licença
 
