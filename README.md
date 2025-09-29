@@ -144,7 +144,27 @@ Pull requests são bem-vindos! Veja o arquivo `CONTRIBUTING.md` para detalhes.
 
 ---
 
+
+## 🆘 Suporte
+
+<p align="center">
+  <a href="https://chat.whatsapp.com/JDciDHplLDhKkgyTCoYhs0" target="_blank">
+    <img src="https://img.icons8.com/color/96/000000/whatsapp--v1.png" alt="WhatsApp"/>
+  </a>
+</p>
+
+Entre no nosso grupo de suporte no WhatsApp para dúvidas, sugestões e ajuda:
+
+👉 <a href="https://chat.whatsapp.com/JDciDHplLDhKkgyTCoYhs0" target="_blank"><strong>Entrar no grupo de suporte</strong></a>
+
+---
+
 ## 📬 Contato
+
+<p align="center">
+  <img src="https://img.icons8.com/fluency/96/000000/gmail-new.png" alt="Email"/>
+  <img src="https://img.icons8.com/fluency/96/000000/github.png" alt="GitHub"/>
+</p>
 
 - [GitHub Issues](https://github.com/Z3phyrkkj/Multi-Downloader/issues)
 - Email: Z3phyrPy@proton.me
@@ -153,4 +173,7 @@ Pull requests são bem-vindos! Veja o arquivo `CONTRIBUTING.md` para detalhes.
 
 <p align="center">
   <img src="https://img.icons8.com/fluency/96/000000/download.png" alt="Download"/>
+  <img src="https://img.icons8.com/color/96/000000/rocket--v1.png" alt="Rocket"/>
+  <img src="https://img.icons8.com/color/96/000000/star--v1.png" alt="Star"/>
+  <img src="https://img.icons8.com/color/96/000000/party-balloons.png" alt="Balloons"/>
 </p>
