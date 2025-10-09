@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <title>Multi Downloader | Download de Instagram, TikTok e Twitter</title>
+    <meta name="description" content="Baixe vídeos e fotos do Instagram, TikTok e Twitter gratuitamente e com alta qualidade">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.40.0/tabler-icons.min.css">
+=======
+    <title>Social Media Downloader</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+>>>>>>> dcc6880abe550e5ed61fbba79edbf64995e852db
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-download"></i>
+                <h1>Social Downloader</h1>
+            </div>
+            <p class="subtitle">Baixe vídeos do Instagram, TikTok e Twitter</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="url-input-container">
+                    <input type="text" id="urlInput" placeholder="Cole o link do Instagram, TikTok ou Twitter aqui..." class="url-input">
+                    <button id="downloadBtn" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Baixar
+                    </button>
+                </div>
+                <div class="platform-buttons">
+                    <button class="platform-btn active" data-platform="all">
+                        <i class="fas fa-globe"></i>
+                        Todas
+                    </button>
+                    <button class="platform-btn" data-platform="instagram">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </button>
+                    <button class="platform-btn" data-platform="tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        TikTok
+                    </button>
+                    <button class="platform-btn" data-platform="twitter">
+                        <i class="fab fa-twitter"></i>
+                        Twitter
+                    </button>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Processando...</p>
+            </div>
+
+            <div id="error" class="error hidden">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="errorMessage"></p>
+            </div>
+
+            <div id="result" class="result hidden">
+                <div class="media-preview">
+                    <img id="previewImage" src="" alt="Preview" class="preview-image">
+                    <div class="media-info">
+                        <h3 id="mediaTitle"></h3>
+                        <p class="media-author" id="mediaAuthor"></p>
+                        <p class="media-duration" id="mediaDuration"></p>
+                    </div>
+                </div>
+                
+                <div class="download-options">
+                    <h4>Opções de Download:</h4>
+                    <div id="qualityOptions" class="quality-options">
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3>Como usar:</h3>
+                <div class="instruction-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Cole o link do vídeo</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Clique em "Baixar"</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>Escolha a qualidade e baixe</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Social Downloader. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

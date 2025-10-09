@@ -1,0 +1,64 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "url": "https://gartic.com.br/imgs/mural/ci/ciine/1266632879.gif",
+      "correctAnswers": ["guaxinim", "raccoon", "mapache"],
+      "category": "animal"
+    },
+    {
+      "id": 2,
+      "url": "https://gartic.com.br/imgs/mural/an/anabeatrizk3/1231255127.png",
+      "correctAnswers": ["heroi", "herói", "super heroi", "super-herói"],
+      "category": "personagem"
+    },
+    {
+      "id": 3,
+      "url": "https://gartic.com.br/imgs/mural/__/__casper/1297289988.png",
+      "correctAnswers": ["al pacino", "alpacino", "pacino"],
+      "category": "pessoa"
+    },
+    {
+      "id": 4,
+      "url": "https://gartic.com.br/imgs/mural/na/naytiisuzuki/bala.png",
+      "correctAnswers": ["bala", "doce", "balinha", "jujuba"],
+      "category": "objeto"
+    },
+    {
+      "id": 5,
+      "url": "https://gartic.com.br/imgs/mural/sl/sluug_/prancheta.png",
+      "correctAnswers": ["prancheta", "clipboard", "quadro"],
+      "category": "objeto"
+    },
+    {
+      "id": 6,
+      "url": "https://gartic.com.br/imgs/mural/vi/vitoracio/1241244456.png",
+      "correctAnswers": ["pista", "estrada", "rodovia", "estrada de rodagem"],
+      "category": "local"
+    },
+    {
+      "id": 7,
+      "url": "https://gartic.com.br/imgs/mural/li/lilamorgan/siri.png",
+      "correctAnswers": ["siri", "caranguejo", "crustaceo"],
+      "category": "animal"
+    },
+    {
+      "id": 8,
+      "url": "https://gartic.com.br/imgs/mural/30/306/1240279270.png",
+      "correctAnswers": ["libelula", "libélula", "dragonfly"],
+      "category": "animal"
+    },
+    {
+      "id": 9,
+      "url": "https://gartic.com.br/imgs/mural/ca/camila____/ryu.png",
+      "correctAnswers": ["ryu", "street fighter", "lutador"],
+      "category": "personagem"
+    },
+    {
+      "id": 10,
+      "url": "https://gartic.com.br/imgs/mural/an/andarilho/1232808144.png",
+      "correctAnswers": ["livro", "book", "tomo", "obra"],
+      "category": "objeto"
+    }
+  ]
+}
